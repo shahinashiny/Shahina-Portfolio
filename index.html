@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shahina Shaik | Data Engineer</title>
+<meta name="description" content="Shahina Shaik, Data Engineer in Toronto. Scalable data pipelines, cloud data platforms and analytics-ready datasets.">
+<meta property="og:title" content="Shahina Shaik | Data Engineer">
+<meta property="og:description" content="From raw data to real-world intelligence.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#f4f7fb;--bg2:#e7edf6;--panel:rgba(255,255,255,.75);--line:rgba(15,30,60,.14);--tx:#0c1424;--mu:#4a5870;--c1:#0891b2;--c2:#6d4aff;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#060b17;--bg2:#0c1426;--panel:rgba(18,28,52,.6);--line:rgba(120,170,255,.18);--tx:#eef3fb;--mu:#9aa9c2;--c1:#22e1e8;--c2:#8b6bff}}
+:root[data-theme=dark]{--bg:#060b17;--bg2:#0c1426;--panel:rgba(18,28,52,.6);--line:rgba(120,170,255,.18);--tx:#eef3fb;--mu:#9aa9c2;--c1:#22e1e8;--c2:#8b6bff}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 var(--sans);overflow-x:hidden;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(60% 50% at 80% 10%,color-mix(in srgb,var(--c2) 22%,transparent),transparent),radial-gradient(50% 40% at 10% 90%,color-mix(in srgb,var(--c1) 14%,transparent),transparent),var(--bg);opacity:.93;z-index:-1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:96px 0}
+.mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--c1)}
+h1,h2,h3{line-height:1.1;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin:10px 0 18px;letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mu{color:var(--mu)}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(10px);padding:22px}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--p,0%);background:linear-gradient(90deg,var(--c1),var(--c2))}
+nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;text-decoration:none}
+.links{display:flex;gap:4px;align-items:center}
+.links a{padding:8px 12px;border-radius:10px;text-decoration:none;font-size:.9rem;color:var(--mu)}
+.links a.on{color:var(--tx);background:var(--panel);box-shadow:inset 0 -2px var(--c1)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);cursor:pointer;font:600 .95rem var(--sans);color:var(--tx);background:var(--panel);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:linear-gradient(90deg,var(--c1),var(--c2));color:#04101c;border:0;box-shadow:0 8px 28px -10px var(--c1)}
+.btn[aria-disabled=true]{opacity:.5;cursor:not-allowed}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font-size:1rem}
+.hero{min-height:100vh;display:grid;align-items:center;padding-top:110px}
+.hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:800;letter-spacing:-.03em;margin:14px 0 20px}
+.ind{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px 0}
+.ind div{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:.88rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+svg.engine{width:100%;height:auto}
+.engine text{font:500 11px var(--mono);fill:var(--tx)}
+.engine .node{fill:var(--bg2);stroke:var(--c1);stroke-width:1.2}
+.engine .pipe{stroke:var(--c2);stroke-width:1.4;fill:none;stroke-dasharray:4 6;opacity:.7;animation:dash 2s linear infinite}
+.engine .pt{fill:var(--c1)}
+.engine .pulse{animation:pl 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes dash{to{stroke-dashoffset:-20}}
+@keyframes pl{50%{transform:scale(1.08);opacity:.7}}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--mu);border-radius:99px;padding:6px 14px;font:500 .8rem var(--mono);cursor:pointer}
+.chip[aria-pressed=true]{color:#04101c;background:var(--c1);border-color:var(--c1)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tag{display:inline-block;margin:4px 6px 0 0;padding:3px 10px;border:1px solid var(--line);border-radius:8px;font:500 .78rem var(--mono)}
+.skills h3{font-size:1rem;margin-bottom:6px}
+.hl{padding:26px;border-radius:18px;border:1px solid var(--c1);background:linear-gradient(135deg,color-mix(in srgb,var(--c1) 14%,transparent),color-mix(in srgb,var(--c2) 12%,transparent));font-size:1.25rem;font-weight:600;margin:22px 0}
+.tl{border-left:2px solid var(--line);margin-left:8px;padding-left:24px}
+.tl li{margin:0 0 12px;list-style:none;position:relative}
+.tl li::before{content:"";position:absolute;left:-31px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--c1)}
+details{border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:12px;background:var(--panel)}
+summary{cursor:pointer;font-weight:600}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.flow>div{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--panel);position:relative}
+.flow>div:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--c1);z-index:2}
+.flow b{display:block;margin-bottom:6px}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--mu)}
+input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--tx);font:inherit}
+.err{color:#ff6b81;font-size:.8rem;min-height:1em}
+.ok{color:var(--c1)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mu);font-size:.9rem}
+.fl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media(max-width:900px){.hgrid,.g2{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow>div:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%)}#menu{display:block}.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px;border-bottom:1px solid var(--line)}.links.open{display:flex}}
+@media(max-width:560px){.g4,.skills,.ind{grid-template-columns:1fr}section{padding:72px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}.engine .pt{display:none}}
+noscript style{display:none}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Primary">
+<a class="logo" href="#home">Shahina<span class="grad"> Shaik</span></a>
+<button id="menu" aria-expanded="false" aria-controls="links" aria-label="Toggle menu">☰</button>
+<div class="links" id="links">
+<a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#work">Featured Work</a><a href="#education">Education</a><a href="#contact">Contact</a>
+<a href="#" class="resume-link">Resume</a><a class="btn p" href="#contact" style="padding:8px 16px;color:#04101c">Contact</a>
+</div></nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap hgrid">
+<div>
+<div class="mono">Data Engineering | Cloud Platforms | Analytics</div>
+<h1>From <span class="grad">Raw Data</span> to Real-World <span class="grad">Intelligence.</span></h1>
+<p class="mu" style="font-size:1.1rem;max-width:560px">I’m Shahina Shaik, a Data Engineer focused on building scalable data pipelines, cloud data platforms, and reliable datasets that power analytics, reporting, and machine learning.</p>
+<div class="ind"><div>≈ 3 years of data engineering experience</div><div>Cloud Data Engineering</div><div>Batch &amp; Real-Time Processing</div><div>Data Warehousing &amp; Analytics</div></div>
+<div class="cta"><a class="btn p" href="#work">Explore My Work</a><a class="btn resume-link" href="#">Download Resume</a><a class="btn" href="#contact">Let’s Connect</a></div>
+</div>
+<div>
+<svg class="engine" viewBox="0 0 520 440" role="img" aria-labelledby="et"><title id="et">Illustrative map of data capabilities</title>
+<desc>Sources and APIs flow into ingestion and orchestration, then processing and streaming, then cloud storage and warehousing, then analytics and machine learning. Illustrative only.</desc>
+<g id="pipes"></g><g id="nodes"></g></svg>
+<p class="mu" style="font-size:.78rem;text-align:center;margin:4px 0 0">Illustrative capability map, not a single production architecture.</p>
+</div></div></section>
+
+<section id="about"><div class="wrap rv">
+<div class="mono">About</div><h2>Systems thinking for <span class="grad">trusted data.</span></h2>
+<div class="g2">
+<p>I am a Data Engineer with around three years of experience designing, developing, and optimizing scalable data pipelines, cloud-based data platforms, and batch and real-time processing solutions. My background spans Python, SQL, Spark, Kafka, Airflow, Snowflake, Amazon Redshift, AWS, Azure Data Factory, and ETL/ELT development.</p>
+<p>My experience covers data warehousing, data modeling, streaming pipelines, data quality, performance optimization, secure data-access practices, and collaboration with data scientists, analysts, and business teams. I focus on delivering reliable datasets for analytics, reporting, and machine learning while improving pipeline performance, reducing processing latency, and automating data workflows.</p>
+</div>
+<div class="g4" id="cards"></div>
+</div></section>
+
+<section id="expertise"><div class="wrap rv">
+<div class="mono">Expertise</div><h2>Technology <span class="grad">atlas</span></h2>
+<p class="mu">Filter by category. This lists the breadth of my toolkit; it does not imply every tool was used in every project.</p>
+<div class="chips" id="chips" role="group" aria-label="Filter skills"></div>
+<div class="skills" id="skills"></div>
+</div></section>
+
+<section id="experience"><div class="wrap rv">
+<div class="mono">Experience</div><h2>LatentView Analytics</h2>
+<p class="mu"><b style="color:var(--tx)">Data Engineer</b> · India · January 2023 – December 2024</p>
+<div class="hl">Approximately 30% reduction in manual processing effort through workflow automation.</div>
+<ul class="tl" id="exp" style="padding-left:24px"></ul>
+</div></section>
+
+<section id="work"><div class="wrap rv">
+<div class="mono">Featured Work · February 2026 – Present</div>
+<h2>University Student &amp; Staff <span class="grad">Attendance Intelligence Platform</span></h2>
+<p class="mu">An integrated, ML-enabled data platform covering ingestion, machine learning, cloud reporting and operational reliability. The diagram below summarizes the project as described in my resume; there is no separate public demo.</p>
+<div class="flow" role="list">
+<div role="listitem"><b class="grad">1 · Ingest &amp; Prepare</b><span class="mu">Attendance, schedules, course/faculty and engagement data via Python, SQL, Airflow, REST APIs</span></div>
+<div role="listitem"><b class="grad">2 · ML Workflows</b><span class="mu">Python, Pandas, NumPy, Scikit-learn, XGBoost</span></div>
+<div role="listitem"><b class="grad">3 · Cloud &amp; Reporting</b><span class="mu">AWS S3, PostgreSQL, Spark, Power BI</span></div>
+<div role="listitem"><b class="grad">4 · Reliability</b><span class="mu">Docker, Git, MLflow, Airflow</span></div>
+</div>
+<details open><summary>Data ingestion and preparation</summary><p class="mu">Integrates student and staff attendance data, class schedules, course and faculty information, and engagement data. Responsibilities: end-to-end ML-enabled pipeline integration, automated data validation, transformation, and feature engineering.</p></details>
+<details><summary>Machine learning workflows</summary><ul class="mu"><li>Identify low-attendance trends</li><li>Detect recurring absence patterns</li><li>Identify students or classes that may require early intervention</li><li>Analyze attendance risk patterns</li></ul></details>
+<details><summary>Cloud data and reporting layer</summary><p class="mu">Curated datasets and dashboards (AWS S3, PostgreSQL, Spark, Power BI) support attendance trends, student engagement, faculty and class performance, and daily and weekly attendance KPIs.</p></details>
+<details><summary>Operational reliability and model integration</summary><p class="mu">Data-quality checks, pipeline scheduling, model versioning, logging, automated refreshes, and reliable access to attendance insights through the online portal, using Docker, Git, MLflow and Airflow.</p></details>
+<p class="mono" style="margin-top:18px">Stack: Python · SQL · Airflow · REST APIs · Pandas · NumPy · Scikit-learn · XGBoost · AWS S3 · PostgreSQL · Spark · Power BI · Docker · Git · MLflow</p>
+</div></section>
+
+<section id="education"><div class="wrap rv">
+<div class="mono">Education</div><h2>Academic <span class="grad">foundation</span></h2>
+<div class="glass" style="max-width:560px"><h3>Master of Science (M.S.) in Data Analytics</h3><p class="mu" style="margin:6px 0 0">University of Niagara Falls, Ontario, Canada<br>July 2026</p></div>
+</div></section>
+
+<section id="contact"><div class="wrap rv">
+<div class="mono">Contact</div><h2>Let’s Build Something <span class="grad">Meaningful With Data.</span></h2>
+<p class="mu" style="max-width:620px">Open to connecting with engineering teams and professionals working on scalable data platforms, cloud infrastructure, analytics, and intelligent data solutions.</p>
+<div class="g2" style="margin-top:28px">
+<div class="glass"><p>📍 Toronto, ON, Canada</p><p><a href="tel:+12899310654">+1 (289) 931-0654</a></p><p><a href="mailto:Shahina1394@careerattainment.com">Shahina1394@careerattainment.com</a></p>
+<div class="cta"><a class="btn social" id="li" href="#" aria-disabled="true">LinkedIn</a><a class="btn social" id="gh" href="#" aria-disabled="true">GitHub</a></div></div>
+<form class="glass" id="f" novalidate>
+<div><label for="n">Name</label><input id="n" autocomplete="name"><div class="err" id="en"></div></div>
+<div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div></div>
+<div><label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" id="em"></div></div>
+<button class="btn p" type="submit">Send via email</button>
+<div id="st" role="status" class="mu" style="font-size:.85rem">No backend is configured; this opens your email app with the message prefilled.</div>
+</form></div>
+</div></section>
+</main>
+<footer><div class="wrap fl"><span>Shahina Shaik · Data Engineer</span><span id="soc"></span><span>© <span id="yr"></span></span></div></footer>
+
+<script>
+// CONFIG: edit these. Leave empty until real URLs exist.
+var CONFIG={resume:"",linkedin:"",github:"",email:"Shahina1394@careerattainment.com"};
+var $=function(s){return document.querySelector(s)};
+$("#yr").textContent=new Date().getFullYear();
+// hero svg
+var N=[["Sources / APIs",20,60],["Ingestion / Orchestration",20,160],["Processing / Streaming",20,260],["Storage / Warehouse",270,110],["Analytics / ML",270,230]];
+var NS="http://www.w3.org/2000/svg",nodes=$("#nodes"),pipes=$("#pipes");
+var P=["M130 95 C190 95 190 145 270 145","M130 195 C190 195 190 145 270 145","M130 295 C190 295 190 265 270 265","M405 145 C440 145 440 265 405 265"];
+P.forEach(function(d,i){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);p.setAttribute("class","pipe");pipes.appendChild(p);
+var c=document.createElementNS(NS,"circle");c.setAttribute("r",3.5);c.setAttribute("class","pt");
+var a=document.createElementNS(NS,"animateMotion");a.setAttribute("dur",(3+i*.6)+"s");a.setAttribute("repeatCount","indefinite");a.setAttribute("path",d);c.appendChild(a);pipes.appendChild(c)});
+var L=[["Python · SQL",20,360],["Airflow · Spark · Kafka",20,395],["AWS · Snowflake · PostgreSQL",270,330],["Power BI",270,365]];
+N.forEach(function(n,i){var g=document.createElementNS(NS,"g");var w=i<3?110:135,h=70;
+g.innerHTML='<rect class="node pulse" style="animation-delay:'+i*.5+'s" x="'+n[1]+'" y="'+n[2]+'" width="'+w+'" height="'+h+'" rx="12"/><text x="'+(n[1]+w/2)+'" y="'+(n[2]+h/2+4)+'" text-anchor="middle">'+n[0].split(" / ")[0]+'</text><text x="'+(n[1]+w/2)+'" y="'+(n[2]+h/2+19)+'" text-anchor="middle" style="fill:var(--mu)">'+(n[0].split(" / ")[1]||"")+'</text>';nodes.appendChild(g)});
+L.forEach(function(l){var t=document.createElementNS(NS,"text");t.setAttribute("x",l[1]);t.setAttribute("y",l[2]);t.style.fill="var(--c1)";t.textContent=l[0];nodes.appendChild(t)});
+// cards
+[["Pipeline Engineering","Scalable ETL/ELT, batch and streaming workflows, automation."],["Cloud Data Platforms","Warehouses and cloud-native data services across AWS, Azure and GCP."],["Data Quality & Governance","Validation, security, access control and retention practices."],["Analytics & ML Enablement","Reliable, analytics-ready datasets for reporting and machine learning."]].forEach(function(c){var d=document.createElement("div");d.className="glass";d.innerHTML="<h3>"+c[0]+'</h3><p class="mu" style="margin:8px 0 0;font-size:.9rem">'+c[1]+"</p>";$("#cards").appendChild(d)});
+// skills
+var S={"Programming & Querying":"Python,SQL,Scala,Bash,Shell Scripting,Spark SQL","Data Engineering & Big Data":"Spark,Hadoop,Flink,Hive,Batch Processing,Real-Time Processing","ETL & Data Pipelines":"ETL,ELT,Airflow,Glue,Azure Data Factory,Talend","Cloud Platforms":"AWS,S3,EC2,Lambda,EMR,Athena,CloudWatch,Azure","Data Warehousing & Databases":"Snowflake,Redshift,BigQuery,PostgreSQL,MySQL,MongoDB,Cassandra","Streaming & Messaging":"Kafka,Real-Time Data Pipelines,Event Streaming,Stream Processing","Data Modeling & Architecture":"Data Modeling,Schema Design,Data Normalization,Data Integration,Data Warehousing,Partitioning,Indexing,Data Lifecycle Management","Data Quality & Governance":"Data Validation,Data Quality,Data Reconciliation,Data Profiling,Data Security,Data Governance,Encryption,RBAC,Audit Logging,HIPAA,PHI,Data Retention","DevOps & Cloud Automation":"Docker,Kubernetes,CI/CD,Infrastructure as Code (IaC),Maven,Jenkins,Ansible","Monitoring & Observability":"CloudWatch,Prometheus,Root Cause Analysis","BI & Reporting":"Power BI,Tableau","Tools & Methodologies":"Git,Jira,ServiceNow,Agile,Scrum,SDLC"};
+var cats=Object.keys(S),sel="All";
+function draw(){var h="";cats.forEach(function(k){if(sel!=="All"&&sel!==k)return;h+='<div class="glass"><h3>'+k.replace("&","&amp;")+"</h3>"+S[k].split(",").map(function(t){return '<span class="tag">'+t+"</span>"}).join("")+"</div>"});$("#skills").innerHTML=h;
+$("#chips").innerHTML=["All"].concat(cats).map(function(k){return '<button class="chip" aria-pressed="'+(k===sel)+'" data-k="'+k.replace(/"/g,"")+'">'+k.replace("&","&amp;")+"</button>"}).join("")}
+draw();$("#chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(b){sel=b.getAttribute("data-k");draw()}});
+// experience
+["Developed scalable ETL/ELT pipelines using AWS Glue, Azure Data Factory, Snowflake, and Python to integrate relational databases, APIs, and IoT sources for enterprise analytics.","Built and maintained cloud-based data warehouses with Amazon Redshift and Google BigQuery to support analytical workloads, ad hoc queries, and business intelligence reporting.","Automated scheduled data-processing workflows using Apache Airflow and Python/cron-based automation, reducing manual processing effort by approximately 30% and improving pipeline consistency.","Integrated and transformed data from IoT sensors, third-party APIs, and enterprise databases, standardizing disparate datasets for downstream analytics and reporting.","Implemented data-quality and validation checks in ETL workflows to identify incomplete, inconsistent, or invalid records before downstream consumption.","Developed monitoring and alerting using AWS CloudWatch and Prometheus to identify pipeline failures, processing issues, and infrastructure problems.","Implemented encryption at rest and in transit, role-based access control, and compliance-oriented data handling across cloud data environments.","Containerized data-processing applications using Docker and Kubernetes for consistent deployment and scalable execution across environments.","Developed API integrations and reusable data connectors for sharing enterprise data across business applications, analytical platforms, and reporting solutions.","Implemented data archival and retention processes to manage historical datasets according to organizational policies and improve cloud-storage utilization.","Collaborated with stakeholders and technical teams to gather requirements, define transformation logic, understand reporting needs, and translate business requirements into scalable solutions."].forEach(function(t){var li=document.createElement("li");li.textContent=t;$("#exp").appendChild(li)});
+// resume + socials
+document.querySelectorAll(".resume-link").forEach(function(a){if(CONFIG.resume){a.href=CONFIG.resume;a.setAttribute("download","Shahina-Shaik-Resume.pdf")}else a.href="mailto:"+CONFIG.email+"?subject=Resume%20request"});
+var soc=[];[["li","linkedin","LinkedIn"],["gh","github","GitHub"]].forEach(function(s){var a=$("#"+s[0]),u=CONFIG[s[1]];if(u){a.href=u;a.target="_blank";a.rel="noopener";a.removeAttribute("aria-disabled");soc.push('<a href="'+u+'">'+s[2]+"</a>")}else{a.title="Add URL in CONFIG";a.addEventListener("click",function(e){e.preventDefault()})}});
+$("#soc").innerHTML=soc.join(" · ");
+// form
+$("#f").addEventListener("submit",function(e){e.preventDefault();var n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim(),ok=true;
+$("#en").textContent=n?"":"Please enter your name.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(em)?"":"Please enter a valid email.";$("#em").textContent=m.length>9?"":"Please write at least 10 characters.";
+if(!n||!/^\S+@\S+\.\S+$/.test(em)||m.length<10)return;
+location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("Portfolio message from "+n)+"&body="+encodeURIComponent(m+"\n\nReply to: "+em);
+$("#st").className="ok";$("#st").textContent="Your email app should open with the message ready to send. Nothing is sent until you press send there."});
+// nav, progress, reveal
+$("#menu").addEventListener("click",function(){var o=$("#links").classList.toggle("open");this.setAttribute("aria-expanded",o)});
+$("#links").addEventListener("click",function(e){if(e.target.tagName==="A"){$("#links").classList.remove("open");$("#menu").setAttribute("aria-expanded",false)}});
+var secs=[].slice.call(document.querySelectorAll("section")),as=document.querySelectorAll(".links a[href^='#']");
+function sc(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$("header").style.setProperty("--p",p+"%");var cur="home";secs.forEach(function(s){if(s.getBoundingClientRect().top<140)cur=s.id});as.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)})}
+addEventListener("scroll",sc,{passive:true});sc();
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});document.querySelectorAll(".rv").forEach(function(x){io.observe(x)})}else document.querySelectorAll(".rv").forEach(function(x){x.classList.add("in")});
+</script>
+<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
