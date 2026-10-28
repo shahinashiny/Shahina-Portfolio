@@ -7,6 +7,9 @@
 <meta name="description" content="Shahina Shaik, Data Engineer in Toronto. Scalable data pipelines, cloud data platforms and analytics-ready datasets.">
 <meta property="og:title" content="Shahina Shaik | Data Engineer">
 <meta property="og:description" content="From raw data to real-world intelligence.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benevolent-wisp-556282.netlify.app/">
+<meta name="theme-color" content="#060b17">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 :root{--bg:#f4f7fb;--bg2:#e7edf6;--panel:rgba(255,255,255,.75);--line:rgba(15,30,60,.14);--tx:#0c1424;--mu:#4a5870;--c1:#0891b2;--c2:#6d4aff;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -91,7 +94,7 @@ noscript style{display:none}
 <button id="menu" aria-expanded="false" aria-controls="links" aria-label="Toggle menu">☰</button>
 <div class="links" id="links">
 <a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#work">Featured Work</a><a href="#education">Education</a><a href="#contact">Contact</a>
-<a href="#" class="resume-link">Resume</a><a class="btn p" href="#contact" style="padding:8px 16px;color:#04101c">Contact</a>
+<a href="#" class="resume-link" data-resume-download="Resume" data-resume-request="Request Resume">Resume</a><a class="btn p" href="#contact" style="padding:8px 16px;color:#04101c">Contact</a>
 </div></nav></div></header>
 
 <main>
@@ -101,7 +104,7 @@ noscript style{display:none}
 <h1>From <span class="grad">Raw Data</span> to Real-World <span class="grad">Intelligence.</span></h1>
 <p class="mu" style="font-size:1.1rem;max-width:560px">I’m Shahina Shaik, a Data Engineer focused on building scalable data pipelines, cloud data platforms, and reliable datasets that power analytics, reporting, and machine learning.</p>
 <div class="ind"><div>≈ 3 years of data engineering experience</div><div>Cloud Data Engineering</div><div>Batch &amp; Real-Time Processing</div><div>Data Warehousing &amp; Analytics</div></div>
-<div class="cta"><a class="btn p" href="#work">Explore My Work</a><a class="btn resume-link" href="#">Download Resume</a><a class="btn" href="#contact">Let’s Connect</a></div>
+<div class="cta"><a class="btn p" href="#work">Explore My Work</a><a class="btn resume-link" href="#" data-resume-download="Download Resume" data-resume-request="Request Resume">Download Resume</a><a class="btn" href="#contact">Let’s Connect</a></div>
 </div>
 <div>
 <svg class="engine" viewBox="0 0 520 440" role="img" aria-labelledby="et"><title id="et">Illustrative map of data capabilities</title>
@@ -199,7 +202,19 @@ draw();$("#chips").addEventListener("click",function(e){var b=e.target.closest("
 // experience
 ["Developed scalable ETL/ELT pipelines using AWS Glue, Azure Data Factory, Snowflake, and Python to integrate relational databases, APIs, and IoT sources for enterprise analytics.","Built and maintained cloud-based data warehouses with Amazon Redshift and Google BigQuery to support analytical workloads, ad hoc queries, and business intelligence reporting.","Automated scheduled data-processing workflows using Apache Airflow and Python/cron-based automation, reducing manual processing effort by approximately 30% and improving pipeline consistency.","Integrated and transformed data from IoT sensors, third-party APIs, and enterprise databases, standardizing disparate datasets for downstream analytics and reporting.","Implemented data-quality and validation checks in ETL workflows to identify incomplete, inconsistent, or invalid records before downstream consumption.","Developed monitoring and alerting using AWS CloudWatch and Prometheus to identify pipeline failures, processing issues, and infrastructure problems.","Implemented encryption at rest and in transit, role-based access control, and compliance-oriented data handling across cloud data environments.","Containerized data-processing applications using Docker and Kubernetes for consistent deployment and scalable execution across environments.","Developed API integrations and reusable data connectors for sharing enterprise data across business applications, analytical platforms, and reporting solutions.","Implemented data archival and retention processes to manage historical datasets according to organizational policies and improve cloud-storage utilization.","Collaborated with stakeholders and technical teams to gather requirements, define transformation logic, understand reporting needs, and translate business requirements into scalable solutions."].forEach(function(t){var li=document.createElement("li");li.textContent=t;$("#exp").appendChild(li)});
 // resume + socials
-document.querySelectorAll(".resume-link").forEach(function(a){if(CONFIG.resume){a.href=CONFIG.resume;a.setAttribute("download","Shahina-Shaik-Resume.pdf")}else a.href="mailto:"+CONFIG.email+"?subject=Resume%20request"});
+document.querySelectorAll(".resume-link").forEach(function(a){
+  if(CONFIG.resume){
+    a.href=CONFIG.resume;
+    a.setAttribute("download","Shahina-Shaik-Resume.pdf");
+    a.removeAttribute("title");
+    if(a.dataset.resumeDownload)a.textContent=a.dataset.resumeDownload;
+  }else{
+    a.href="mailto:"+CONFIG.email+"?subject=Resume%20request";
+    a.removeAttribute("download");
+    a.title="Email Shahina to request a copy of the resume";
+    if(a.dataset.resumeRequest)a.textContent=a.dataset.resumeRequest;
+  }
+});
 var soc=[];[["li","linkedin","LinkedIn"],["gh","github","GitHub"]].forEach(function(s){var a=$("#"+s[0]),u=CONFIG[s[1]];if(u){a.href=u;a.target="_blank";a.rel="noopener";a.removeAttribute("aria-disabled");soc.push('<a href="'+u+'">'+s[2]+"</a>")}else{a.title="Add URL in CONFIG";a.addEventListener("click",function(e){e.preventDefault()})}});
 $("#soc").innerHTML=soc.join(" · ");
 // form
