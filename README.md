@@ -36,9 +36,18 @@ The featured attendance platform is presented as a project overview, not as a pu
 
 ```text
 Shahina-Portfolio/
-├── index.html   # Complete static website: markup, CSS, and JavaScript
-└── README.md    # Project overview and maintenance notes
+├── index.html    # Complete static website: markup, CSS, and JavaScript
+├── robots.txt    # Allows crawlers to access the public site
+├── sitemap.xml   # Sitemap for the portfolio homepage
+└── README.md     # Project overview and maintenance notes
 ```
+
+## Search discovery files
+
+The root-level `robots.txt` allows public-site crawling and points to `sitemap.xml`. The XML sitemap lists the canonical portfolio homepage. These files help crawlers discover the site, but do not guarantee indexing or search ranking.
+
+- [robots.txt](https://benevolent-wisp-556282.netlify.app/robots.txt)
+- [sitemap.xml](https://benevolent-wisp-556282.netlify.app/sitemap.xml)
 
 ## Run locally
 
