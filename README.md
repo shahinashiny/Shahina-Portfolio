@@ -3,6 +3,7 @@
 My personal portfolio website for showcasing my data engineering background, technical skills, experience, and selected project work.
 
 **Live website:** [benevolent-wisp-556282.netlify.app](https://benevolent-wisp-556282.netlify.app/)  
+**Public data engineering project:** [Global E-Commerce Sales Data Pipeline on Azure](https://github.com/shahinashiny/Customer_Account_Analysis_Pipeline_Shahina)  
 **LinkedIn:** [linkedin.com/in/shahina-shaik-8ba21a24a](https://www.linkedin.com/in/shahina-shaik-8ba21a24a)  
 **GitHub profile:** [github.com/shahinashiny](https://github.com/shahinashiny)
 
@@ -16,7 +17,7 @@ The portfolio is a responsive, single-page static website built with HTML, CSS, 
 - Animated SVG illustration of a data engineering workflow.
 - Technical-skills section with category filters.
 - Professional experience and an approximately 30% workflow-automation impact highlight.
-- Featured attendance-intelligence platform overview.
+- Featured attendance-intelligence platform overview and a direct link to the public Azure e-commerce data pipeline source.
 - Education and contact sections.
 - Contact form that opens the visitor's email application with a prefilled message.
 
