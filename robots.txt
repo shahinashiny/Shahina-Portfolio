@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benevolent-wisp-556282.netlify.app/sitemap.xml
