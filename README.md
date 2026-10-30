@@ -4,6 +4,7 @@ My personal portfolio website for showcasing my data engineering background, tec
 
 **Live website:** [benevolent-wisp-556282.netlify.app](https://benevolent-wisp-556282.netlify.app/)  
 **Public data engineering project:** [Global E-Commerce Sales Data Pipeline on Azure](https://github.com/shahinashiny/Customer_Account_Analysis_Pipeline_Shahina)  
+**Attendance intelligence case study:** [University Student & Staff Attendance Intelligence Platform](https://github.com/shahinashiny/Shahina-Portfolio/blob/main/projects/student-staff-attendance-intelligence/README.md)  
 **LinkedIn:** [linkedin.com/in/shahina-shaik-8ba21a24a](https://www.linkedin.com/in/shahina-shaik-8ba21a24a)  
 **GitHub profile:** [github.com/shahinashiny](https://github.com/shahinashiny)
 
@@ -17,11 +18,11 @@ The portfolio is a responsive, single-page static website built with HTML, CSS, 
 - Animated SVG illustration of a data engineering workflow.
 - Technical-skills section with category filters.
 - Professional experience and an approximately 30% workflow-automation impact highlight.
-- Featured attendance-intelligence platform overview and a direct link to the public Azure e-commerce data pipeline source.
+- Featured attendance-intelligence platform overview, a written project case study, and a direct link to the public Azure e-commerce data pipeline source.
 - Education and contact sections.
 - Contact form that opens the visitor's email application with a prefilled message.
 
-The featured attendance platform is presented as a project overview, not as a public hosted demo or live application.
+The featured attendance platform is presented as a project overview and a written case study based on the resume. Runnable source code, a public dataset, model metrics, and a live application demo are not currently published in this repository.
 
 ## Technology
 
