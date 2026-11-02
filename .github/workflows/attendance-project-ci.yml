@@ -1,0 +1,22 @@
+name: Attendance project CI
+on:
+  push:
+    paths:
+      - 'projects/student-staff-attendance-intelligence/**'
+  pull_request:
+    paths:
+      - 'projects/student-staff-attendance-intelligence/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/student-staff-attendance-intelligence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --upgrade pip
+      - run: pip install pandas numpy scikit-learn fastapi httpx pytest
+      - run: python -m pytest -q

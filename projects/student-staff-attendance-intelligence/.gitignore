@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.DS_Store
+data/raw/*.csv
+data/processed/*.csv
+data/processed/*.parquet
+data/processed/spark_features/
+models/*.joblib
+models/*.json
+mlartifacts/**
+!mlartifacts/.gitkeep

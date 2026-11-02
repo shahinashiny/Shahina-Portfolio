@@ -1,0 +1,1 @@
+"""Student and staff attendance intelligence platform."""

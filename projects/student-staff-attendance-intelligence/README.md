@@ -1,65 +1,55 @@
-# University Student & Staff Attendance Intelligence Platform
+# Student & Staff Attendance Intelligence Platform
 
-**Role:** Data Engineer / Data Analytics Project  
-**Timeline:** February 2026 – Present
+An end-to-end data engineering portfolio implementation. It combines synthetic student/staff attendance, schedules, courses, faculty, and engagement records into curated analytical data, engineers rolling features, trains a risk classifier, tracks experiments, exposes REST endpoints, and prepares Power BI outputs.
 
-## Project overview
+**Data notice:** All records are generated with a fixed seed. No real student, employee, or institutional data is included. The label represents a simulated next-seven-day absence outcome. Metrics are synthetic-data demonstration results only.
 
-An end-to-end data engineering and analytics project focused on preparing student and staff attendance information for operational reporting and machine-learning analysis. The workflow brings together attendance records, class schedules, course details, faculty information, and engagement data.
+## Architecture
+Synthetic data generator → CSV landing zone → Airflow orchestration → validation/deduplication → Pandas or PySpark feature engineering → PostgreSQL and S3-compatible storage → Power BI. XGBoost/Scikit-learn trains a risk classifier, MLflow tracks experiments, and FastAPI serves summaries and scores.
 
-This page documents the project scope described in Shahina Shaik's resume. It is a project case study, not a claim that a public production application or runnable source-code package is available in this repository.
+## Implemented
+- Reproducible synthetic student/staff attendance and engagement records.
+- Validation, type conversion, invalid-row rejection, duplicate handling, and reject logs.
+- Daily and rolling 7-record attendance/late/engagement features; daily and department summaries.
+- Optional PySpark distributed transformation to Parquet.
+- PostgreSQL publishing via SQLAlchemy and optional boto3 S3 upload; MinIO is provided locally.
+- XGBoost classifier with Scikit-learn fallback, holdout evaluation, risk probabilities and low/medium/high bands.
+- Optional MLflow tracking, FastAPI, Airflow DAG, Power BI/DAX guide, Docker Compose, tests and CI.
 
-## Data workflow
+## Quick start
+Python 3.11 recommended:
+1. Create and activate a virtual environment.
+2. Install: python -m pip install -r requirements.txt
+3. Generate: python src/generate_data.py
+4. Transform: python src/pipeline.py
+5. Train/score: python src/train.py
+6. Test: python -m pytest -q
+7. API: uvicorn src.api:app --reload
 
-1. **Ingestion:** Integrate attendance, schedule, course, faculty, and engagement data using Python, SQL, Apache Airflow, and REST APIs.
-2. **Preparation:** Automate data ingestion, transformation, validation, and feature-engineering workflows to prepare reliable analytical datasets.
-3. **Processing and storage:** Use AWS S3, PostgreSQL, and Apache Spark to prepare curated datasets for attendance trends, engagement analysis, class performance, and operational reporting.
-4. **Business intelligence:** Build Power BI dashboards for daily and weekly attendance KPIs, attendance trends, engagement metrics, and faculty/class-level insights.
-5. **Machine learning:** Use Python, Pandas, NumPy, Scikit-learn, and XGBoost to examine attendance patterns, predict attendance risks, and support early-intervention analysis.
-6. **Tracking and reliability:** Use MLflow for model tracking and version management, with Airflow, Python, Docker, and Git supporting workflow monitoring and reproducibility.
+Open http://127.0.0.1:8000/docs. The default generator creates 360 synthetic people over 90 calendar days (weekends skipped). Configure with --people, --days, and --seed.
 
-## High-level workflow
+## Outputs
+- data/raw/attendance_events.csv — generated landing records
+- data/processed/person_features.csv — validated and engineered rows
+- data/processed/rejected_records.csv — invalid input rows
+- data/processed/daily_summary.csv and department_summary.csv — reporting aggregates
+- data/processed/latest_person_features.csv and risk_predictions.csv — latest person-level scores
+- models/attendance_risk_model.joblib and models/metrics.json — model and holdout metrics
 
-```mermaid
-flowchart LR
-  A[Attendance records] --> E[Ingestion: Python, SQL, REST APIs]
-  B[Schedules, courses, faculty] --> E
-  C[Engagement data] --> E
-  E --> O[Apache Airflow orchestration]
-  O --> V[Validation, transformation, feature engineering]
-  V --> P[AWS S3 / PostgreSQL / Spark]
-  P --> BI[Power BI dashboards]
-  P --> ML[Python ML workflows]
-  ML --> X[Scikit-learn / XGBoost]
-  X --> M[MLflow tracking and versioning]
-```
+## Docker Compose
+Run docker compose up --build -d. Then call POST http://localhost:8000/pipeline/run.
+Services: API :8000, PostgreSQL :5432, MLflow :5000, MinIO console :9001 (local demo login minioadmin / minioadmin123). Demo credentials are not for production.
 
-*Conceptual workflow based on the project description in the resume.*
+Optional Airflow: docker compose --profile orchestration up --build -d airflow. Open http://localhost:8080 and trigger student_staff_attendance_intelligence. Optional Spark: install Java and run python src/spark_job.py; it writes Parquet under data/processed/spark_features/.
 
-## Technology stack
+## API
+GET /health, GET /metrics, GET /daily-summary, GET /risk?limit=25&person_type=student, POST /pipeline/run.
 
-| Area | Technologies |
-|---|---|
-| Programming and data | Python, SQL, Pandas, NumPy |
-| Ingestion and orchestration | REST APIs, Apache Airflow |
-| Processing and storage | Apache Spark, AWS S3, PostgreSQL |
-| Analytics and reporting | Power BI |
-| Machine learning | Scikit-learn, XGBoost |
-| Reliability and model tracking | Docker, Git, MLflow |
+## Power BI
+Import daily_summary.csv, department_summary.csv, and risk_predictions.csv or connect to PostgreSQL. Use date, person_type, department, campus and risk_band as slicers. See powerbi/README.md for report pages and DAX.
 
-## Project outcomes and use cases
+## Responsible use
+Synthetic IDs are not real identifiers. Never commit real student or employee data. The future-outcome field is used only to create the label and is removed from model inputs. Scores are human-review demonstration signals, never automated disciplinary, employment, academic or other high-stakes decisions. Replace all demo secrets with managed secrets and least-privilege IAM before cloud use.
 
-- Curated datasets for attendance trends, student engagement, class performance, and operational reporting.
-- Daily and weekly attendance KPIs with faculty- and class-level visibility.
-- Attendance-pattern and risk analysis to support early-intervention decisions.
-- Data-quality checks and automated workflow monitoring to improve pipeline reliability.
-- Model tracking and version management through MLflow.
-
-## Current public-repository scope
-
-This repository currently contains the portfolio website and this written case study. It does **not** contain the attendance platform's runnable source code, production credentials, a public dataset, model metrics, or a live application demo. No model accuracy, deployment scale, or business-impact percentage is claimed here.
-
-## Author
-
-**Shahina Shaik**  
-[GitHub profile](https://github.com/shahinashiny) · [LinkedIn](https://www.linkedin.com/in/shahina-shaik-8ba21a24a) · [Portfolio website](https://benevolent-wisp-556282.netlify.app/)
+## Production hardening
+Before real-data use, add institution-approved secure ingestion, data contracts, idempotent backfills, partitioning, access control, privacy/retention review, pipeline/model drift monitoring, and formal model governance.
