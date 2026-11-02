@@ -62,10 +62,24 @@ services:
       context: .
       dockerfile: Dockerfile.airflow
     command: airflow standalone
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+      mlflow:
+        condition: service_started
     environment:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
       AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      DATABASE_URL: postgresql+psycopg2://attendance:attendance@postgres:5432/attendance
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      S3_BUCKET: attendance-data
+      S3_ENDPOINT_URL: http://minio:9000
+      AWS_ACCESS_KEY_ID: minioadmin
+      AWS_SECRET_ACCESS_KEY: minioadmin123
+      AWS_DEFAULT_REGION: us-east-1
     ports: ["8080:8080"]
     volumes:
       - ./:/opt/project
