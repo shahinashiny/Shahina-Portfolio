@@ -39,14 +39,16 @@ def transform_attendance(source:Path, output_dir:Path)->dict[str,pd.DataFrame]:
     rejected.to_csv(output_dir/"rejected_records.csv",index=False)
     daily=clean.groupby(["date","person_type"],as_index=False).agg(
         people_present=("person_id","nunique"),scheduled_sessions=("scheduled_sessions","sum"),
-        attended_sessions=("attended_sessions","sum"),average_engagement=("engagement_score","mean"),risk_cases=("at_risk","sum"))
+        attended_sessions=("attended_sessions","sum"),average_engagement=("engagement_score","mean"),risk_observations=("at_risk","sum"))
     daily["attendance_rate"]=daily.attended_sessions/daily.scheduled_sessions
     daily.to_csv(output_dir/"daily_summary.csv",index=False)
     dept=clean.groupby(["department","person_type"],as_index=False).agg(
         people=("person_id","nunique"),scheduled_sessions=("scheduled_sessions","sum"),
         attended_sessions=("attended_sessions","sum"),average_engagement=("engagement_score","mean"),risk_cases=("at_risk","sum"))
     dept["attendance_rate"]=dept.attended_sessions/dept.scheduled_sessions
-    dept["risk_rate"]=dept.risk_cases/dept.people.clip(lower=1)
+    risk_people=clean.loc[clean.at_risk.eq(1)].groupby(["department","person_type"])["person_id"].nunique()
+    dept["risk_people"]=[int(risk_people.get((row.department,row.person_type),0)) for row in dept.itertuples()]
+    dept["risk_rate"]=dept.risk_people/dept.people.clip(lower=1)
     dept.to_csv(output_dir/"department_summary.csv",index=False)
     clean.sort_values("date").groupby("person_id",as_index=False).tail(1).to_csv(output_dir/"latest_person_features.csv",index=False)
     db=os.getenv("DATABASE_URL")
