@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shahina Shaik | Data Engineer</title>
-<meta name="description" content="Shahina Shaik, Data Engineer in Toronto. Scalable data pipelines, cloud data platforms and analytics-ready datasets.">
+<meta name="description" content="Shahina Shaik is a Data Engineer with 4+ years of experience in ETL/ELT pipelines, cloud data platforms, streaming data, fraud analytics, and machine learning workflows.">
 <meta property="og:title" content="Shahina Shaik | Data Engineer">
-<meta property="og:description" content="From raw data to real-world intelligence.">
+<meta property="og:description" content="Data Engineer | Python, SQL, AWS and Snowflake">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://benevolent-wisp-556282.netlify.app/">
-<link rel="canonical" href="https://benevolent-wisp-556282.netlify.app/">
+<meta property="og:url" content="https://shahinashiny.github.io/Shahina-Portfolio/">
+<link rel="canonical" href="https://shahinashiny.github.io/Shahina-Portfolio/">
 <meta name="robots" content="index, follow">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shahina Shaik | Data Engineer">
-<meta name="twitter:description" content="From raw data to real-world intelligence. Data pipelines, cloud data platforms, and analytics-ready datasets.">
+<meta name="twitter:description" content="4+ years building ETL/ELT pipelines, cloud data platforms, and analytics datasets.">
 <meta name="theme-color" content="#060b17">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -31,6 +31,7 @@ section{padding:96px 0}
 .mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--c1)}
 h1,h2,h3{line-height:1.1;margin:0}
 h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin:10px 0 18px;letter-spacing:-.02em}
+h3{font-size:1.1rem}
 .grad{background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .mu{color:var(--mu)}
 .glass{background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(10px);padding:22px}
@@ -44,7 +45,6 @@ nav{display:flex;align-items:center;justify-content:space-between;height:62px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);cursor:pointer;font:600 .95rem var(--sans);color:var(--tx);background:var(--panel);transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn.p{background:linear-gradient(90deg,var(--c1),var(--c2));color:#04101c;border:0;box-shadow:0 8px 28px -10px var(--c1)}
-.btn[aria-disabled=true]{opacity:.5;cursor:not-allowed}
 #menu{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font-size:1rem}
 .hero{min-height:100vh;display:grid;align-items:center;padding-top:110px}
 .hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
@@ -68,10 +68,13 @@ svg.engine{width:100%;height:auto}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .tag{display:inline-block;margin:4px 6px 0 0;padding:3px 10px;border:1px solid var(--line);border-radius:8px;font:500 .78rem var(--mono)}
 .skills h3{font-size:1rem;margin-bottom:6px}
-.hl{padding:26px;border-radius:18px;border:1px solid var(--c1);background:linear-gradient(135deg,color-mix(in srgb,var(--c1) 14%,transparent),color-mix(in srgb,var(--c2) 12%,transparent));font-size:1.25rem;font-weight:600;margin:22px 0}
-.tl{border-left:2px solid var(--line);margin-left:8px;padding-left:24px}
+.hl{padding:18px 22px;border-radius:16px;border:1px solid var(--c1);background:linear-gradient(135deg,color-mix(in srgb,var(--c1) 14%,transparent),color-mix(in srgb,var(--c2) 12%,transparent));font-size:1.05rem;font-weight:600;margin:18px 0}
+.tl{border-left:2px solid var(--line);margin:16px 0 0 8px;padding-left:24px}
 .tl li{margin:0 0 12px;list-style:none;position:relative}
 .tl li::before{content:"";position:absolute;left:-31px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--c1)}
+.job{margin-top:20px}
+.job-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+.job-head p{margin:8px 0 0}
 details{border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:12px;background:var(--panel)}
 summary{cursor:pointer;font-weight:600}
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
@@ -88,9 +91,8 @@ input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid 
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mu);font-size:.9rem}
 .fl{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media(max-width:900px){.hgrid,.g2{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow>div:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-16px;transform:translateX(-50%)}#menu{display:block}.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);padding:12px;border-bottom:1px solid var(--line)}.links.open{display:flex}}
-@media(max-width:560px){.g4,.skills,.ind{grid-template-columns:1fr}section{padding:72px 0}}
+@media(max-width:560px){.g4,.skills,.ind{grid-template-columns:1fr}section{padding:72px 0}.job-head{display:block}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}.engine .pt{display:none}}
-noscript style{display:none}
 </style>
 </head>
 <body>
@@ -98,170 +100,176 @@ noscript style{display:none}
 <a class="logo" href="#home">Shahina<span class="grad"> Shaik</span></a>
 <button id="menu" aria-expanded="false" aria-controls="links" aria-label="Toggle menu">☰</button>
 <div class="links" id="links">
-<a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#work">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+<a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Technical Skills</a><a href="#experience">Experience</a><a href="#work">Academic Project</a><a href="#education">Education</a><a href="#contact">Contact</a>
 <a href="#" class="resume-link" data-resume-download="Resume" data-resume-request="Request Resume">Resume</a><a class="btn p" href="#contact" style="padding:8px 16px;color:#04101c">Contact</a>
 </div></nav></div></header>
 
 <main>
 <section class="hero" id="home"><div class="wrap hgrid">
 <div>
-<div class="mono">Data Engineering | Cloud Platforms | Analytics</div>
+<div class="mono">Data Engineer | Python · SQL · AWS · Snowflake</div>
 <h1>From <span class="grad">Raw Data</span> to Real-World <span class="grad">Intelligence.</span></h1>
-<p class="mu" style="font-size:1.1rem;max-width:560px">I’m Shahina Shaik, a Data Engineer focused on building scalable data pipelines, cloud data platforms, and reliable datasets that power analytics, reporting, and machine learning.</p>
-<div class="ind"><div>ETL/ELT &amp; Pipeline Automation</div><div>Cloud Data Engineering</div><div>Batch &amp; Real-Time Processing</div><div>Data Warehousing &amp; Analytics</div></div>
+<p class="mu" style="font-size:1.1rem;max-width:560px">I’m Shahina Shaik, a Data Engineer with 4+ years of experience building ETL/ELT pipelines, cloud data platforms, and analytics datasets. I work across batch and streaming workflows, with strengths in data validation, query optimization, workflow automation, and pipeline troubleshooting.</p>
+<div class="ind"><div>4+ Years of Data Engineering</div><div>Batch &amp; Streaming Workflows</div><div>Cloud Data Platforms</div><div>Fraud Analysis &amp; Machine Learning</div></div>
 <div class="cta"><a class="btn p" href="#work">Explore My Work</a><a class="btn resume-link" href="#" data-resume-download="Download Resume" data-resume-request="Request Resume">Download Resume</a><a class="btn" href="#contact">Let’s Connect</a></div>
 </div>
 <div>
-<svg class="engine" viewBox="0 0 520 440" role="img" aria-labelledby="et"><title id="et">Illustrative map of data capabilities</title>
-<desc>Sources and APIs flow into ingestion and orchestration, then processing and streaming, then cloud storage and warehousing, then analytics and machine learning. Illustrative only.</desc>
+<svg class="engine" viewBox="0 0 520 440" role="img" aria-labelledby="et">
+<title id="et">Illustrative data engineering capability map</title>
+<desc>Illustrative flow from source systems and APIs through ingestion and orchestration, processing and streaming, data platforms, and analytics or machine learning.</desc>
 <g id="pipes"></g><g id="nodes"></g></svg>
 <p class="mu" style="font-size:.78rem;text-align:center;margin:4px 0 0">Illustrative capability map, not a single production architecture.</p>
 </div></div></section>
 
 <section id="about"><div class="wrap rv">
-<div class="mono">About</div><h2>Systems thinking for <span class="grad">trusted data.</span></h2>
+<div class="mono">Professional Summary</div><h2>Dependable data for <span class="grad">analytics and ML.</span></h2>
 <div class="g2">
-<p>I am a Data Engineer experienced in designing, developing, and optimizing scalable data pipelines, cloud-based data platforms, and batch and real-time processing solutions. My background spans Python, SQL, Spark, Kafka, Airflow, Snowflake, Amazon Redshift, AWS, Azure Data Factory, and ETL/ELT development.</p>
-<p>My experience covers data warehousing, data modeling, streaming pipelines, data quality, performance optimization, secure data-access practices, and collaboration with data scientists, analysts, and business teams. I focus on delivering reliable datasets for analytics, reporting, and machine learning while improving pipeline performance, reducing processing latency, and automating data workflows.</p>
+<p>Data Engineer with 4+ years of experience building ETL/ELT pipelines, cloud data platforms, and analytics datasets. Hands-on experience with Python, SQL, PySpark, Kafka, Airflow, AWS, and Snowflake across batch and streaming workflows.</p>
+<p>Strengths are data validation, query optimization, workflow automation, and pipeline troubleshooting. Collaborates with engineering team to deliver dependable data for reporting, fraud analysis, and machine learning.</p>
 </div>
 <div class="g4" id="cards"></div>
 </div></section>
 
 <section id="expertise"><div class="wrap rv">
-<div class="mono">Expertise</div><h2>Technology <span class="grad">atlas</span></h2>
-<p class="mu">Filter by category. This lists the breadth of my toolkit; it does not imply every tool was used in every project.</p>
-<div class="chips" id="chips" role="group" aria-label="Filter skills"></div>
+<div class="mono">Technical Skills</div><h2>Engineering <span class="grad">toolkit</span></h2>
+<p class="mu">Explore the technologies and practices listed in my resume. The categories reflect my stated skillset; they do not imply every tool was used in every role.</p>
+<div class="chips" id="chips" role="group" aria-label="Filter technical skills"></div>
 <div class="skills" id="skills"></div>
 </div></section>
 
 <section id="experience"><div class="wrap rv">
-<div class="mono">Experience</div><h2>LatentView Analytics</h2>
-<p class="mu"><b style="color:var(--tx)">Data Engineer</b> · India · January 2023 – December 2024</p>
-<div class="hl">Approximately 30% reduction in manual processing effort through workflow automation.</div>
-<ul class="tl" id="exp" style="padding-left:24px"></ul>
+<div class="mono">Professional Experience</div><h2>Building and operating <span class="grad">data systems.</span></h2>
+
+<article class="glass job">
+<div class="job-head">
+<div><h3>LYFT</h3><p class="mu"><b style="color:var(--tx)">Data Engineer</b> · Canada</p></div>
+<div class="mono">August 2026 – Present</div>
+</div>
+<div class="hl">Pipeline processing time reduced from 90 to 65 minutes through orchestration and processing improvements.</div>
+<ul class="tl">
+<li>Built streaming ingestion pipelines with Apache Kafka and PySpark to process transaction and payment events, preparing structured datasets for downstream fraud analysis and machine learning.</li>
+<li>Integrated transaction histories, customer profiles, and payment gateway records using AWS Glue and Snowflake, creating centralized datasets for fraud risk analysis and model training.</li>
+<li>Developed feature engineering pipelines with Python and SQL to calculate transaction frequency and spending velocity, preparing behavioral inputs for downstream machine learning workflows.</li>
+<li>Orchestrated data-processing workflows in Apache Airflow, managing dependencies, incremental loads, and scheduled refreshes for datasets stored in Amazon S3; reduced processing time from 90 to 65 minutes.</li>
+<li>Optimized Spark SQL transformations through partitioning and incremental processing, and tuned Snowflake queries to improve feature extraction performance across transaction datasets.</li>
+<li>Implemented Great Expectations checks for missing transactions and schema changes and monitored pipeline failures in AWS CloudWatch while maintaining secure access to sensitive data.</li>
+</ul>
+</article>
+
+<article class="glass job">
+<div class="job-head">
+<div><h3>Observe.AI</h3><p class="mu"><b style="color:var(--tx)">Data Engineer</b> · India</p></div>
+<div class="mono">January 2021 – December 2024</div>
+</div>
+<div class="hl">Approximately 30% reduction in manual processing effort through recurring workflow automation.</div>
+<ul class="tl">
+<li>Built ETL/ELT pipelines using AWS Glue, Azure Data Factory, Python, and Snowflake to integrate relational database and REST API data for enterprise analytics.</li>
+<li>Optimized SQL queries, data transformations, and storage structures in Amazon Redshift to improve data retrieval and processing efficiency for business intelligence reporting workloads.</li>
+<li>Automated recurring ingestion and processing workflows with Apache Airflow and Python, reducing manual processing effort by approximately 30% while improving scheduling consistency and pipeline reliability.</li>
+<li>Implemented SQL and Python checks for duplicate, incomplete, and inconsistent records; configured CloudWatch and Prometheus monitoring to investigate processing failures and data-quality issues.</li>
+<li>Containerized data-processing applications with Docker and Kubernetes for consistent deployments, coordinating API integrations and reusable data connectors with technical teams to meet enterprise analytics needs.</li>
+</ul>
+</article>
 </div></section>
 
 <section id="work"><div class="wrap rv">
-<div class="mono">Projects · Featured Data Engineering Work</div>
-<h2>University Student &amp; Staff <span class="grad">Attendance Intelligence Platform</span></h2>
-<p class="mu">A runnable portfolio implementation with synthetic data, automated ETL, feature engineering, XGBoost risk scoring, MLflow tracking, REST APIs and Power BI reporting. <a href="https://github.com/shahinashiny/Shahina-Portfolio/tree/main/projects/student-staff-attendance-intelligence" target="_blank" rel="noopener noreferrer">View runnable source on GitHub</a>. No real institutional data or production deployment is claimed.</p>
+<div class="mono">Academic Project · February 2026 – July 2026</div>
+<h2>University Student and Staff <span class="grad">Attendance Intelligence Platform</span></h2>
+<p class="mu">A university attendance-portal data pipeline combining attendance, schedule, course, and faculty data with validation, attendance-risk workflows, curated reporting datasets, and model/pipeline tracking.</p>
 <div class="flow" role="list">
-<div role="listitem"><b class="grad">1 · Ingest &amp; Prepare</b><span class="mu">Attendance, schedules, course/faculty and engagement data via Python, SQL, Airflow, REST APIs</span></div>
-<div role="listitem"><b class="grad">2 · ML Workflows</b><span class="mu">Python, Pandas, NumPy, Scikit-learn, XGBoost</span></div>
-<div role="listitem"><b class="grad">3 · Cloud &amp; Reporting</b><span class="mu">AWS S3, PostgreSQL, Spark, Power BI</span></div>
-<div role="listitem"><b class="grad">4 · Reliability</b><span class="mu">Docker, Git, MLflow, Airflow</span></div>
+<div role="listitem"><b class="grad">1 · Ingest &amp; Validate</b><span class="mu">Python, SQL, Apache Airflow, REST APIs; attendance, schedules, courses, faculty</span></div>
+<div role="listitem"><b class="grad">2 · Attendance Risk</b><span class="mu">Pandas, scikit-learn, XGBoost; recurring absences and risk indicators</span></div>
+<div role="listitem"><b class="grad">3 · Curate &amp; Report</b><span class="mu">AWS S3, PostgreSQL, Spark, Power BI; attendance, engagement, daily and weekly KPIs</span></div>
+<div role="listitem"><b class="grad">4 · Track &amp; Refresh</b><span class="mu">Docker, Git, MLflow, Airflow; version control, model tracking, scheduling, logging</span></div>
 </div>
-<details open><summary>Data ingestion and preparation</summary><p class="mu">Integrates student and staff attendance data, class schedules, course and faculty information, and engagement data. Responsibilities: end-to-end ML-enabled pipeline integration, automated data validation, transformation, and feature engineering.</p></details>
-<details><summary>Machine learning workflows</summary><ul class="mu"><li>Identify low-attendance trends</li><li>Detect recurring absence patterns</li><li>Identify students or classes that may require early intervention</li><li>Analyze attendance risk patterns</li></ul></details>
-<details><summary>Cloud data and reporting layer</summary><p class="mu">Curated datasets and dashboards (AWS S3, PostgreSQL, Spark, Power BI) support attendance trends, student engagement, faculty and class performance, and daily and weekly attendance KPIs.</p></details>
-<details><summary>Operational reliability and model integration</summary><p class="mu">Data-quality checks, pipeline scheduling, model versioning, logging, automated refreshes, and reliable access to attendance insights through the online portal, using Docker, Git, MLflow and Airflow.</p></details>
-<p class="mono" style="margin-top:18px">Stack: Python · SQL · Airflow · REST APIs · Pandas · NumPy · Scikit-learn · XGBoost · AWS S3 · PostgreSQL · Spark · Power BI · Docker · Git · MLflow</p>
-<p class="mu" style="margin-top:12px"><a class="btn p" href="https://github.com/shahinashiny/Shahina-Portfolio/blob/main/projects/student-staff-attendance-intelligence/README.md" target="_blank" rel="noopener noreferrer">Read project case study</a></p>
-
-<div class="glass" style="margin-top:24px">
-  <div class="mono">Public GitHub Project</div>
-  <h3 style="margin:10px 0">Global E-Commerce Sales Data Pipeline on Azure</h3>
-  <p class="mu">An Azure data engineering workflow that ingests sales CSV files with Azure Data Factory, stores source data in ADLS Gen2, transforms records with Azure Synapse PySpark, writes cleaned Parquet output, and queries it using Synapse Serverless SQL.</p>
-  <p class="mono" style="margin:14px 0">Azure Data Factory · ADLS Gen2 · Synapse PySpark · Parquet · Serverless SQL</p>
-  <a class="btn p" href="https://github.com/shahinashiny/Customer_Account_Analysis_Pipeline_Shahina" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
-</div>
-<div class="glass" style="margin-top:24px">
-  <div class="mono">Python · Data Analytics · Testing</div>
-  <h3 style="margin:10px 0">Retail Sales Summary Tool</h3>
-  <p class="mu">A Python and pandas analytics workflow that cleans retail transaction data, calculates sales and profit summaries, ranks products and customers, and creates visualizations for category performance, top products, and monthly sales trends.</p>
-  <p class="mono" style="margin:14px 0">Python · Pandas · Matplotlib · Pytest · GitHub Actions · Ruff</p>
-  <a class="btn p" href="https://github.com/shahinashiny/Assignment2_Retail_Sales_Summary_Tool" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
-</div>
+<details open><summary>Pipeline development and data validation</summary><p class="mu">Built a pipeline for a university attendance portal using Python, SQL, Airflow, and REST APIs to combine attendance, schedules, course, and faculty data with validation checks.</p></details>
+<details><summary>Attendance-risk workflows</summary><p class="mu">Developed attendance-risk workflows with Pandas, scikit-learn, and XGBoost to analyze recurring absences and generate risk indicators for students and classes requiring review.</p></details>
+<details><summary>Curated datasets and Power BI reporting</summary><p class="mu">Created curated datasets in AWS S3 and PostgreSQL, using Spark transformations and Power BI dashboards to report attendance trends, engagement, and daily and weekly KPIs.</p></details>
+<details><summary>Pipeline and model workflow integration</summary><p class="mu">Integrated Docker, Git, MLflow, and Airflow into pipeline and model workflows for version control, model tracking, scheduling, logging, and automated data refreshes.</p></details>
+<p class="mono" style="margin-top:18px">Stack: Python · SQL · Apache Airflow · REST APIs · Pandas · scikit-learn · XGBoost · AWS S3 · PostgreSQL · Spark · Power BI · Docker · Git · MLflow</p>
+<p class="mu" style="margin-top:12px"><a class="btn p" href="https://github.com/shahinashiny/Shahina-Portfolio/tree/main/projects/student-staff-attendance-intelligence" target="_blank" rel="noopener noreferrer">View project files on GitHub</a></p>
 </div></section>
 
 <section id="education"><div class="wrap rv">
 <div class="mono">Education</div><h2>Academic <span class="grad">foundation</span></h2>
-<div class="glass" style="max-width:560px"><h3>Master of Science (M.S.) in Data Analytics</h3><p class="mu" style="margin:6px 0 0">University of Niagara Falls, Ontario, Canada<br>July 2025</p></div>
+<div class="glass" style="max-width:620px"><h3>Master of Science (M.S.) in Data Analytics</h3><p class="mu" style="margin:8px 0 0">University of Niagara Falls, ON, Canada<br>July 2026</p></div>
 </div></section>
 
 <section id="contact"><div class="wrap rv">
 <div class="mono">Contact</div><h2>Let’s Build Something <span class="grad">Meaningful With Data.</span></h2>
-<p class="mu" style="max-width:620px">Open to connecting with engineering teams and professionals working on scalable data platforms, cloud infrastructure, analytics, and intelligent data solutions.</p>
+<p class="mu" style="max-width:620px">Collaborate with me on data engineering, cloud data platforms, streaming workflows, analytics, and machine learning data solutions.</p>
 <div class="g2" style="margin-top:28px">
-<div class="glass"><p>📍 Toronto, ON, Canada</p><p><a href="tel:+12899310654">+1 (289) 931-0654</a></p><p><a href="mailto:Shahina1394@careerattainment.com">Shahina1394@careerattainment.com</a></p>
+<div class="glass"><p>📍 Toronto, ON, Canada</p><p><a href="tel:+14377801049">+1 (437) 780-1049</a></p><p><a href="mailto:Shaikshahina1394@careerattainment.com">Shaikshahina1394@careerattainment.com</a></p>
 <div class="cta"><a class="btn social" id="li" href="https://www.linkedin.com/in/shahina-shaik-8ba21a24a" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="btn social" id="gh" href="https://github.com/shahinashiny" target="_blank" rel="noopener noreferrer">GitHub</a></div></div>
 <form class="glass" id="f" novalidate>
-<div><label for="n">Name</label><input id="n" autocomplete="name"><div class="err" id="en"></div></div>
-<div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" id="ee"></div></div>
-<div><label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" id="em"></div></div>
+<div><label for="n">Name</label><input id="n" autocomplete="name" required><div class="err" id="en"></div></div>
+<div><label for="e">Email</label><input id="e" type="email" autocomplete="email" required><div class="err" id="ee"></div></div>
+<div><label for="m">Message</label><textarea id="m" rows="4" required></textarea><div class="err" id="em"></div></div>
 <button class="btn p" type="submit">Send via email</button>
-<div id="st" role="status" class="mu" style="font-size:.85rem">No backend is configured; this opens your email app with the message prefilled.</div>
+<div id="st" role="status" class="mu" style="font-size:.85rem">The form opens your email app with a prefilled message. Nothing is sent automatically.</div>
 </form></div>
 </div></section>
 </main>
 <footer><div class="wrap fl"><span>Shahina Shaik · Data Engineer</span><span id="soc"></span><span>© <span id="yr"></span></span></div></footer>
 
 <script>
-// CONFIG: edit these. Leave empty until real URLs exist.
-var CONFIG={resume:"",linkedin:"https://www.linkedin.com/in/shahina-shaik-8ba21a24a",github:"https://github.com/shahinashiny",email:"Shahina1394@careerattainment.com"};
+var CONFIG={resume:"",linkedin:"https://www.linkedin.com/in/shahina-shaik-8ba21a24a",github:"https://github.com/shahinashiny",email:"Shaikshahina1394@careerattainment.com"};
 var $=function(s){return document.querySelector(s)};
 $("#yr").textContent=new Date().getFullYear();
-// hero svg
-var N=[["Sources / APIs",20,60],["Ingestion / Orchestration",20,160],["Processing / Streaming",20,260],["Storage / Warehouse",270,110],["Analytics / ML",270,230]];
+
+// Animated illustrative data-engineering capability map.
+var N=[["Sources / APIs",20,60],["Ingestion / Orchestration",20,160],["Processing / Streaming",20,260],["Cloud / Data Platforms",270,110],["Analytics / ML",270,230]];
 var NS="http://www.w3.org/2000/svg",nodes=$("#nodes"),pipes=$("#pipes");
 var P=["M130 95 C190 95 190 145 270 145","M130 195 C190 195 190 145 270 145","M130 295 C190 295 190 265 270 265","M405 145 C440 145 440 265 405 265"];
 P.forEach(function(d,i){var p=document.createElementNS(NS,"path");p.setAttribute("d",d);p.setAttribute("class","pipe");pipes.appendChild(p);
 var c=document.createElementNS(NS,"circle");c.setAttribute("r",3.5);c.setAttribute("class","pt");
 var a=document.createElementNS(NS,"animateMotion");a.setAttribute("dur",(3+i*.6)+"s");a.setAttribute("repeatCount","indefinite");a.setAttribute("path",d);c.appendChild(a);pipes.appendChild(c)});
-var L=[["Python · SQL",20,360],["Airflow · Spark · Kafka",20,395],["AWS · Snowflake · PostgreSQL",270,330],["Power BI",270,365]];
-N.forEach(function(n,i){var g=document.createElementNS(NS,"g");var w=i<3?110:135,h=70;
+var L=[["Python · SQL",20,360],["Airflow · Kafka · PySpark",20,395],["AWS · Snowflake · Redshift",270,330],["Power BI · ML",270,365]];
+N.forEach(function(n,i){var g=document.createElementNS(NS,"g"),w=i<3?110:135,h=70;
 g.innerHTML='<rect class="node pulse" style="animation-delay:'+i*.5+'s" x="'+n[1]+'" y="'+n[2]+'" width="'+w+'" height="'+h+'" rx="12"/><text x="'+(n[1]+w/2)+'" y="'+(n[2]+h/2+4)+'" text-anchor="middle">'+n[0].split(" / ")[0]+'</text><text x="'+(n[1]+w/2)+'" y="'+(n[2]+h/2+19)+'" text-anchor="middle" style="fill:var(--mu)">'+(n[0].split(" / ")[1]||"")+'</text>';nodes.appendChild(g)});
 L.forEach(function(l){var t=document.createElementNS(NS,"text");t.setAttribute("x",l[1]);t.setAttribute("y",l[2]);t.style.fill="var(--c1)";t.textContent=l[0];nodes.appendChild(t)});
-// cards
-[["Pipeline Engineering","Scalable ETL/ELT, batch and streaming workflows, automation."],["Cloud Data Platforms","Warehouses and cloud-native data services across AWS, Azure and GCP."],["Data Quality & Governance","Validation, security, access control and retention practices."],["Analytics & ML Enablement","Reliable, analytics-ready datasets for reporting and machine learning."]].forEach(function(c){var d=document.createElement("div");d.className="glass";d.innerHTML="<h3>"+c[0]+'</h3><p class="mu" style="margin:8px 0 0;font-size:.9rem">'+c[1]+"</p>";$("#cards").appendChild(d)});
-// skills
+
+// Focus-area cards.
+[["Streaming & Batch Pipelines","Kafka, PySpark, Airflow, ETL/ELT, and incremental workflows."],["Cloud Data Platforms","AWS Glue, S3, CloudWatch, Azure Data Factory, Snowflake, Redshift, PostgreSQL."],["Data Quality & Reliability","Great Expectations, SQL/Python validation, Prometheus, and pipeline troubleshooting."],["Fraud Analytics & ML","Feature engineering and dependable datasets for fraud analysis and machine learning."]].forEach(function(c){var d=document.createElement("div");d.className="glass";var h=document.createElement("h3");h.textContent=c[0];var p=document.createElement("p");p.className="mu";p.style.cssText="margin:8px 0 0;font-size:.9rem";p.textContent=c[1];d.append(h,p);$("#cards").appendChild(d)});
+
+// Technical skills exactly grouped from the supplied resume.
 var S={
-"Programming & Querying":"Python,SQL,Scala,Bash,Shell Scripting,Spark SQL",
-"Data Engineering & Processing":"Apache Spark,Batch Processing,Real-Time Processing,ETL,ELT,Data Integration,Data Transformation,REST APIs",
-"Pipeline & Orchestration":"Apache Airflow,AWS Glue,Azure Data Factory,Talend,Workflow Automation,Pipeline Scheduling",
-"Cloud Platforms":"AWS,S3,EC2,Lambda,EMR,Athena,Redshift,CloudWatch,Azure",
-"Data Warehousing & Databases":"Snowflake,Amazon Redshift,Google BigQuery,PostgreSQL,MySQL,MongoDB,Cassandra",
-"Streaming & Messaging":"Apache Kafka,Event Streaming,Real-Time Data Pipelines,Stream Processing",
-"Data Modeling & Optimization":"Data Modeling,Schema Design,Normalization,Partitioning,Indexing,Query Optimization,Performance Tuning",
-"Data Quality, Governance & Security":"Data Validation,Data Profiling,Data Reconciliation,Data Governance,RBAC,Encryption,Audit Logging,Data Retention,HIPAA,PHI",
-"DevOps & Automation":"Git,Docker,Kubernetes,Jenkins,CI/CD,Ansible,Maven",
-"Monitoring & Observability":"AWS CloudWatch,Prometheus,Logging,Alerting,Root Cause Analysis",
-"Analytics & Reporting":"Power BI,Tableau",
-"Tools & Methodologies":"Git,Jira,ServiceNow,Agile,Scrum,SDLC"
-}
+"Programming and Processing":["Python","SQL","PySpark","Spark SQL"],
+"Pipelines and Integration":["ETL/ELT","Apache Airflow","Apache Kafka","REST API integration","Incremental loading"],
+"Cloud and Data Platforms":["AWS (S3, Glue, CloudWatch)","Azure Data Factory","Snowflake","Amazon Redshift","PostgreSQL"],
+"Modeling and Performance":["Data warehousing","Schema design","Query tuning","Partitioning"],
+"Quality and Reliability":["Great Expectations","SQL/Python validation","Prometheus","Root cause analysis"],
+"Development and Deployment":["Git","Docker","Kubernetes","Secure data access"],
+"Analytics and ML Projects":["Power BI","Pandas","NumPy","scikit-learn","XGBoost","MLflow","Feature engineering"]
+};
 var cats=Object.keys(S),sel="All";
-function draw(){var h="";cats.forEach(function(k){if(sel!=="All"&&sel!==k)return;h+='<div class="glass"><h3>'+k.replace("&","&amp;")+"</h3>"+S[k].split(",").map(function(t){return '<span class="tag">'+t+"</span>"}).join("")+"</div>"});$("#skills").innerHTML=h;
-$("#chips").innerHTML=["All"].concat(cats).map(function(k){return '<button class="chip" aria-pressed="'+(k===sel)+'" data-k="'+k.replace(/"/g,"")+'">'+k.replace("&","&amp;")+"</button>"}).join("")}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function draw(){var h="";cats.forEach(function(k){if(sel!=="All"&&sel!==k)return;h+='<div class="glass"><h3>'+esc(k)+'</h3>'+S[k].map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+"</div>"});$("#skills").innerHTML=h;
+$("#chips").innerHTML=["All"].concat(cats).map(function(k){return '<button type="button" class="chip" aria-pressed="'+(k===sel)+'" data-k="'+esc(k)+'">'+esc(k)+"</button>"}).join("")}
 draw();$("#chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(b){sel=b.getAttribute("data-k");draw()}});
-// experience
-["Developed scalable ETL/ELT pipelines using AWS Glue, Azure Data Factory, Snowflake, and Python to integrate relational databases, APIs, and IoT sources for enterprise analytics.","Built and maintained cloud-based data warehouses with Amazon Redshift and Google BigQuery to support analytical workloads, ad hoc queries, and business intelligence reporting.","Automated scheduled data-processing workflows using Apache Airflow and Python/cron-based automation, reducing manual processing effort by approximately 30% and improving pipeline consistency.","Integrated and transformed data from IoT sensors, third-party APIs, and enterprise databases, standardizing disparate datasets for downstream analytics and reporting.","Implemented data-quality and validation checks in ETL workflows to identify incomplete, inconsistent, or invalid records before downstream consumption.","Developed monitoring and alerting using AWS CloudWatch and Prometheus to identify pipeline failures, processing issues, and infrastructure problems.","Implemented encryption at rest and in transit, role-based access control, and compliance-oriented data handling across cloud data environments.","Containerized data-processing applications using Docker and Kubernetes for consistent deployment and scalable execution across environments.","Developed API integrations and reusable data connectors for sharing enterprise data across business applications, analytical platforms, and reporting solutions.","Implemented data archival and retention processes to manage historical datasets according to organizational policies and improve cloud-storage utilization.","Collaborated with stakeholders and technical teams to gather requirements, define transformation logic, understand reporting needs, and translate business requirements into scalable solutions."].forEach(function(t){var li=document.createElement("li");li.textContent=t;$("#exp").appendChild(li)});
-// resume + socials
+
+// Resume actions: keep the PDF private until a public download file is intentionally configured.
 document.querySelectorAll(".resume-link").forEach(function(a){
-  if(CONFIG.resume){
-    a.href=CONFIG.resume;
-    a.setAttribute("download","Shahina-Shaik-Resume.pdf");
-    a.removeAttribute("title");
-    if(a.dataset.resumeDownload)a.textContent=a.dataset.resumeDownload;
-  }else{
-    a.href="mailto:"+CONFIG.email+"?subject=Resume%20request";
-    a.removeAttribute("download");
-    a.title="Email Shahina to request a copy of the resume";
-    if(a.dataset.resumeRequest)a.textContent=a.dataset.resumeRequest;
-  }
+ if(CONFIG.resume){a.href=CONFIG.resume;a.setAttribute("download","Shahina-Shaik-Resume.pdf");a.textContent=a.dataset.resumeDownload||"Download Resume"}
+ else{a.href="mailto:"+CONFIG.email+"?subject=Resume%20request";a.title="Email Shahina to request a copy of the resume";a.textContent=a.dataset.resumeRequest||"Request Resume"}
 });
-var soc=[];[["li","linkedin","LinkedIn"],["gh","github","GitHub"]].forEach(function(s){var a=$("#"+s[0]),u=CONFIG[s[1]];if(u){a.href=u;a.target="_blank";a.rel="noopener";a.removeAttribute("aria-disabled");soc.push('<a href="'+u+'">'+s[2]+"</a>")}else{a.title="Add URL in CONFIG";a.addEventListener("click",function(e){e.preventDefault()})}});
+var soc=[];[["li","linkedin","LinkedIn"],["gh","github","GitHub"]].forEach(function(s){var a=$("#"+s[0]),u=CONFIG[s[1]];a.href=u;a.target="_blank";a.rel="noopener";soc.push('<a href="'+u+'" target="_blank" rel="noopener">'+s[2]+"</a>")});
 $("#soc").innerHTML=soc.join(" · ");
-// form
-$("#f").addEventListener("submit",function(e){e.preventDefault();var n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim(),ok=true;
-$("#en").textContent=n?"":"Please enter your name.";$("#ee").textContent=/^\S+@\S+\.\S+$/.test(em)?"":"Please enter a valid email.";$("#em").textContent=m.length>9?"":"Please write at least 10 characters.";
+
+// Contact form opens a prefilled email; it does not claim server-side submission.
+$("#f").addEventListener("submit",function(e){e.preventDefault();var n=$("#n").value.trim(),m=$("#m").value.trim(),em=$("#e").value.trim();
+$("#en").textContent=n?"":"Please enter your name.";
+$("#ee").textContent=/^\S+@\S+\.\S+$/.test(em)?"":"Please enter a valid email.";
+$("#em").textContent=m.length>9?"":"Please write at least 10 characters.";
 if(!n||!/^\S+@\S+\.\S+$/.test(em)||m.length<10)return;
 location.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent("Portfolio message from "+n)+"&body="+encodeURIComponent(m+"\n\nReply to: "+em);
 $("#st").className="ok";$("#st").textContent="Your email app should open with the message ready to send. Nothing is sent until you press send there."});
-// nav, progress, reveal
+
+// Mobile navigation, scroll progress, and reveal animation.
 $("#menu").addEventListener("click",function(){var o=$("#links").classList.toggle("open");this.setAttribute("aria-expanded",o)});
 $("#links").addEventListener("click",function(e){if(e.target.tagName==="A"){$("#links").classList.remove("open");$("#menu").setAttribute("aria-expanded",false)}});
 var secs=[].slice.call(document.querySelectorAll("section")),as=document.querySelectorAll(".links a[href^='#']");
-function sc(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$("header").style.setProperty("--p",p+"%");var cur="home";secs.forEach(function(s){if(s.getBoundingClientRect().top<140)cur=s.id});as.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)})}
+function sc(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$("#header");document.querySelector("header").style.setProperty("--p",p+"%");var cur="home";secs.forEach(function(s){if(s.getBoundingClientRect().top<140)cur=s.id});as.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)})}
 addEventListener("scroll",sc,{passive:true});sc();
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});document.querySelectorAll(".rv").forEach(function(x){io.observe(x)})}else document.querySelectorAll(".rv").forEach(function(x){x.classList.add("in")});
 </script>
