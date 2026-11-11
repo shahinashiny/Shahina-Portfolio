@@ -1,54 +1,60 @@
 # Shahina Shaik | Data Engineering Portfolio
 
-My personal portfolio website for showcasing my data engineering background, technical skills, experience, and selected project work.
+Personal portfolio for **Shahina Shaik, Data Engineer**.
 
-**Live website:** [benevolent-wisp-556282.netlify.app](https://benevolent-wisp-556282.netlify.app/)  
-**Public data engineering project:** [Global E-Commerce Sales Data Pipeline on Azure](https://github.com/shahinashiny/Customer_Account_Analysis_Pipeline_Shahina)  
-**Attendance intelligence case study:** [University Student & Staff Attendance Intelligence Platform](https://github.com/shahinashiny/Shahina-Portfolio/blob/main/projects/student-staff-attendance-intelligence/README.md)  
-**LinkedIn:** [linkedin.com/in/shahina-shaik-8ba21a24a](https://www.linkedin.com/in/shahina-shaik-8ba21a24a)  
-**GitHub profile:** [github.com/shahinashiny](https://github.com/shahinashiny)
+**Live website:** https://shahinashiny.github.io/Shahina-Portfolio/  
+**LinkedIn:** https://www.linkedin.com/in/shahina-shaik-8ba21a24a  
+**GitHub profile:** https://github.com/shahinashiny  
+**Academic project case study:** [University Student and Staff Attendance Intelligence Platform](projects/student-staff-attendance-intelligence/README.md)
+
+## Resume-aligned profile
+
+The portfolio content is aligned with the latest resume supplied for the site:
+
+- **Professional summary:** 4+ years of Data Engineering experience.
+- **LYFT, Canada:** Data Engineer · August 2026–Present.
+- **Observe.AI, India:** Data Engineer · January 2021–December 2024.
+- **Academic project:** University Student and Staff Attendance Intelligence Platform · February 2026–July 2026.
+- **Education:** M.S. in Data Analytics, University of Niagara Falls, ON, Canada · July 2026.
+
+The experience entries, project description, education, contact details, and seven technical-skills groups are maintained from the resume. Skill categories are not intended to imply that every technology was used in every role.
 
 ## About the site
 
-The portfolio is a responsive, single-page static website built with HTML, CSS, and vanilla JavaScript. The styles and scripts are embedded in `index.html`, so no package installation or build step is needed.
+The portfolio is a responsive, single-page static website built with HTML, CSS, SVG, and vanilla JavaScript. Styles and scripts are embedded in `index.html`; no package installation or build step is required.
 
 ### Features
 
 - Responsive layout with mobile navigation.
-- Animated SVG illustration of a data engineering workflow.
+- Animated SVG illustration of data-engineering capability areas.
 - Technical-skills section with category filters.
-- Professional experience and an approximately 30% workflow-automation impact highlight.
-- Featured attendance-intelligence platform overview, a written project case study, and a direct link to the public Azure e-commerce data pipeline source.
-- Education and contact sections.
-- Contact form that opens the visitor's email application with a prefilled message.
+- Separate LYFT and Observe.AI experience entries and their resume-stated outcomes.
+- University Student and Staff Attendance Intelligence Platform case study.
+- Education, contact links, and a validated contact form.
+- Reduced-motion styling and keyboard focus states.
 
-The featured attendance platform is presented as a project overview and a written case study based on the resume. Runnable source code, a public dataset, model metrics, and a live application demo are not currently published in this repository.
+The attendance project page links to the project repository. The project implementation uses synthetic demonstration data; no real institutional data, live university deployment, or production model performance is claimed.
 
 ## Technology
 
 - HTML5
-- CSS3, responsive layouts, and reduced-motion styling
+- CSS3 and responsive layouts
 - Vanilla JavaScript
-- SVG illustration
+- SVG visualization
 - Google Fonts (Inter and JetBrains Mono)
-- Netlify for hosting
 
 ## Repository structure
 
 ```text
 Shahina-Portfolio/
-├── index.html    # Complete static website: markup, CSS, and JavaScript
-├── robots.txt    # Allows crawlers to access the public site
-├── sitemap.xml   # Sitemap for the portfolio homepage
-└── README.md     # Project overview and maintenance notes
+├── index.html
+├── projects/
+│   └── student-staff-attendance-intelligence/
+│       └── README.md
+├── robots.txt
+├── sitemap.xml
+└── README.md
 ```
-
-## Search discovery files
-
-The root-level `robots.txt` allows public-site crawling and points to `sitemap.xml`. The XML sitemap lists the canonical portfolio homepage. These files help crawlers discover the site, but do not guarantee indexing or search ranking.
-
-- [robots.txt](https://benevolent-wisp-556282.netlify.app/robots.txt)
-- [sitemap.xml](https://benevolent-wisp-556282.netlify.app/sitemap.xml)
 
 ## Run locally
 
@@ -59,43 +65,41 @@ The root-level `robots.txt` allows public-site crawling and points to `sitemap.x
    cd Shahina-Portfolio
    ```
 
-2. Open `index.html` in a browser.
-
-   Alternatively, start a local static web server:
+2. Open `index.html` in a browser, or start a local static server:
 
    ```bash
    python -m http.server 8000
    ```
 
-   Then visit [http://localhost:8000](http://localhost:8000).
+   Then visit http://localhost:8000.
 
-No Node.js dependencies or build command are required.
+## Contact and resume behavior
 
-## Resume and contact behavior
+The contact links use the latest resume details:
 
-The resume button uses a configurable `CONFIG.resume` value in the JavaScript section of `index.html`.
+- Location: Toronto, ON, Canada
+- Phone: +1 (437) 780-1049
+- Email: Shaikshahina1394@careerattainment.com
+- LinkedIn: https://www.linkedin.com/in/shahina-shaik-8ba21a24a
+- GitHub: https://github.com/shahinashiny
 
-- When `CONFIG.resume` is set to a real, publicly accessible resume file URL, the button becomes a download link.
-- When `CONFIG.resume` is empty, the button links to an email request instead. The button label should reflect that behavior.
-- The contact form has no backend. It validates the required fields in the browser and opens the visitor's default email application; the message is not sent automatically.
-- The email address, LinkedIn URL, and GitHub URL are configured in the same `CONFIG` object.
+The resume action currently opens an email request rather than publishing the PDF as a public download. This keeps the resume file from being exposed as a public repository asset by default.
 
-Only use a public resume URL if you are comfortable making that document publicly accessible.
+The contact form validates its fields and opens the visitor's email application with a prefilled message. It does not send messages to a backend.
 
 ## Deployment
 
-The live site is hosted on Netlify. To deploy a new version, push the updated `index.html` to the connected GitHub repository and confirm that the Netlify deployment succeeds. If the site is not connected to automatic deployments, publish the repository's root directory as a static site.
+The portfolio URL is the GitHub Pages address above. The site files are in the repository root; after changes are pushed to `main`, confirm that the GitHub Pages deployment completes and then verify the live page.
 
-## Before publishing changes
+## Before publishing further changes
 
-- Check all social and contact links.
-- Confirm experience, education, project descriptions, and skills are accurate and up to date.
-- Test navigation and the skills filters on desktop and mobile.
-- Test the resume button's configured behavior.
-- Confirm the contact form opens an email draft and does not imply that a message is submitted to a backend.
+- Keep employer names, role titles, locations, dates, project details, skills, and education aligned with the latest resume.
+- Check phone, email, LinkedIn, and GitHub links.
+- Test navigation, skills filters, and contact-form email behavior on desktop and mobile.
+- Keep the PDF private unless a public resume download is specifically intended.
 - Never commit passwords, API keys, or cloud credentials.
 
 ## Maintainer
 
 **Shahina Shaik**  
-[LinkedIn](https://www.linkedin.com/in/shahina-shaik-8ba21a24a) · [GitHub](https://github.com/shahinashiny) · [Live Portfolio](https://benevolent-wisp-556282.netlify.app/)
+[LinkedIn](https://www.linkedin.com/in/shahina-shaik-8ba21a24a) · [GitHub](https://github.com/shahinashiny) · [Live Portfolio](https://shahinashiny.github.io/Shahina-Portfolio/)
